@@ -15,7 +15,7 @@ bool skoczek(int tab[N][N],int x,int y,int number) {
 	for (int i = 0; i < 8; i++) {
 		int x_next = x + moves_x[i];
 		int y_next = y + moves_y[i];
-		if (isMovePossible(tab, x_next, y_next)) return skoczek(tab, x_next, y_next, number++);
+		if (isMovePossible(tab, x_next, y_next)) if(skoczek(tab, x_next, y_next, number++))return true;
 }
 	tab[x][y] = 0;
 	return false;
